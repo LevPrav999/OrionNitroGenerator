@@ -51,7 +51,6 @@ public class SettingsFragment extends Fragment {
 
         btnPolicy.setOnClickListener(click->loadFragment(new PolicyFragment()));
 
-
         return view;
     }
 
@@ -62,6 +61,8 @@ public class SettingsFragment extends Fragment {
         ft.replace(R.id.body,f);
         ft.commit();
         btnSave.setVisibility(View.GONE);
+        btnPolicy.setVisibility(View.GONE);
+        tokenField.setVisibility(View.GONE);
 
     }
 

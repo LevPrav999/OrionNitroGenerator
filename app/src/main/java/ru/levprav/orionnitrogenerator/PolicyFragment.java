@@ -33,7 +33,7 @@ public class PolicyFragment extends Fragment {
         btnGoBack = view.findViewById(R.id.btn_go_back);
 
         btnGoBack.setOnClickListener(new View.OnClickListener() {
-           @Override
+            @Override
             public void onClick(View view) {
                 Log.d("ddd", "sss");
                 loadFragment(new SettingsFragment());
@@ -49,6 +49,8 @@ public class PolicyFragment extends Fragment {
         FragmentTransaction ft = fm.beginTransaction();
         ft.replace(R.id.body,f);
         ft.commit();
+
+        btnGoBack.setVisibility(View.GONE);
 
     }
 }

@@ -12,27 +12,25 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="109dp"
-        android:layout_marginBottom="75dp"
+        android:layout_marginTop="68dp"
+        android:layout_marginBottom="92dp"
         android:paddingLeft="5dp"
         android:text="@string/policy"
         android:textColor="#DC127E"
         android:textSize="18dp"
-        app:layout_constraintBottom_toTopOf="@+id/btn_go_back"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btn_go_back"
         android:layout_width="116dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="187dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="132dp"
         android:background="@drawable/bg_buttons"
         android:text="@string/go_back"
         android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 </androidx.constraintlayout.widget.ConstraintLayout>
