@@ -9,4 +9,6 @@
     <string name="your_account_token">Your account token</string>
     <string name="save_settings">Save settings</string>
     <string name="code">code</string>
+    <string name="policy">1. Данные, переданные вами в данное приложение, никуда не отправляются и не логируются.\n\n 2. Приложение имеет открытый исходный код. Если вы его купили, поздравляю! Вы долбаёб.\n\n 3. Вы можете внести свой вклад в развитие приложения, используя гитхаб.\n\n 4. Если Вы обнаружили баг или недочёт, откройте Issue на гитхабе.\n\n 5. Связаться с автором приложение можно через телеграм - @timofey_prostov</string>
+    <string name="go_back">Go back</string>
 </resources>

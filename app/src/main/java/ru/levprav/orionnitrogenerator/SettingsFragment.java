@@ -20,6 +20,7 @@ public class SettingsFragment extends Fragment {
 
     EditText tokenField;
     Button btnSave;
+    Button btnPolicy;
     SharedPreferences sPref;
 
     public SettingsFragment() {}
@@ -37,6 +38,7 @@ public class SettingsFragment extends Fragment {
 
         tokenField = view.findViewById(R.id.tokenField);
         btnSave = view.findViewById(R.id.btn_save);
+        btnPolicy = view.findViewById(R.id.btn_policy);
 
         if(!loadToken().equals(""))
             tokenField.setText(loadToken());
@@ -46,6 +48,8 @@ public class SettingsFragment extends Fragment {
             Toast.makeText(getContext(), "Saved!", Toast.LENGTH_SHORT).show();
             loadFragment(new MainFragment());
         });
+
+        btnPolicy.setOnClickListener(click->loadFragment(new PolicyFragment()));
 
 
         return view;
