@@ -47,7 +47,7 @@ public class PolicyFragment extends Fragment {
         FragmentManager fm = getChildFragmentManager();
 
         FragmentTransaction ft = fm.beginTransaction();
-        ft.replace(R.id.bodyF,f);
+        ft.replace(R.id.body,f);
         ft.commit();
 
     }
