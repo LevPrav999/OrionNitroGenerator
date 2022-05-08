@@ -20,6 +20,7 @@ public class SettingsFragment extends Fragment {
 
     EditText tokenField;
     Button btnSave;
+    Button btnPolicy;
     SharedPreferences sPref;
 
     public SettingsFragment() {}
@@ -37,6 +38,7 @@ public class SettingsFragment extends Fragment {
 
         tokenField = view.findViewById(R.id.tokenField);
         btnSave = view.findViewById(R.id.btn_save);
+        btnPolicy = view.findViewById(R.id.btn_policy);
 
         if(!loadToken().equals(""))
             tokenField.setText(loadToken());
@@ -47,6 +49,8 @@ public class SettingsFragment extends Fragment {
             loadFragment(new MainFragment());
         });
 
+        btnPolicy.setOnClickListener(click->loadFragment(new PolicyFragment()));
+
 
         return view;
     }
@@ -55,7 +59,7 @@ public class SettingsFragment extends Fragment {
         FragmentManager fm = getChildFragmentManager();
 
         FragmentTransaction ft = fm.beginTransaction();
-        ft.replace(R.id.body,f);
+        ft.replace(R.id.bodyF,f);
         ft.commit();
         btnSave.setVisibility(View.GONE);
 
