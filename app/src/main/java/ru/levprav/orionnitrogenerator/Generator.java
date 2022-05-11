@@ -70,9 +70,11 @@ public class Generator {
 
         return builder.toString();
     }
+
     public static RequestsMethods getApi() {
         return requestsMethods;
     }
+
     private String loadToken() {
         sPref = activity.getPreferences(Context.MODE_PRIVATE);
         return sPref.getString("token", "");

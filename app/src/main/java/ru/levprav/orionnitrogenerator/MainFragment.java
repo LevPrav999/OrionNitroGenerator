@@ -31,6 +31,8 @@ public class MainFragment extends Fragment {
     SharedPreferences sPref;
     MutableLiveData<ArrayList<CodeRequestModel>> array = new MutableLiveData<>();
     Handler h;
+    RecyclerAdapter recyclerAdapter;
+    Generator generator;
 
     public MainFragment() {}
 
@@ -49,7 +51,7 @@ public class MainFragment extends Fragment {
         btnStart = view.findViewById(R.id.btn_start);
         recyclerView = view.findViewById(R.id.recyclerView);
 
-        RecyclerAdapter recyclerAdapter = new RecyclerAdapter(getContext(), array);
+        recyclerAdapter = new RecyclerAdapter(getContext(), array);
         recyclerView.setAdapter(recyclerAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
@@ -58,14 +60,16 @@ public class MainFragment extends Fragment {
             switch (statusCode){ // 0 - never used | 1 - active | 2 - idle
                 case 1: {
                     saveStatus(2);
+                    btnStart.setText(R.string.start_generating);
                     Toast.makeText(getContext(), "Generation stopped", Toast.LENGTH_LONG).show();
                     return;
                 }
                 case 0:
                 case 2:{
                     saveStatus(1);
+                    btnStart.setText(R.string.stop_generating);
                     Toast.makeText(getContext(), "Generation started", Toast.LENGTH_LONG).show();
-                    Generator generator = new Generator(getActivity(), array);
+                    generator = new Generator(getActivity(), array);
                     h = new Handler(Looper.getMainLooper()) {
                         @Override
                         public void handleMessage(@NonNull Message msg) {

@@ -4,6 +4,7 @@
     <string name="valid_code">Valid code</string>
     <string name="orion_nitro_generator">Orion Nitro Generator</string>
     <string name="start_generating">Start generating</string>
+    <string name="stop_generating">Stop generating</string>
     <string name="created_by_levprav_for_free_use">Created by LevPrav for free use</string>
     <string name="your_account_token">Your account token</string>
     <string name="save_settings">Save settings</string>

@@ -31,13 +31,7 @@ public class PolicyFragment extends Fragment {
 
         btnGoBack = view.findViewById(R.id.btn_go_back);
 
-        btnGoBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Log.d("ddd", "sss");
-                loadFragment(new SettingsFragment());
-            }
-        });
+        btnGoBack.setOnClickListener(view1 -> loadFragment(new SettingsFragment()));
 
         return view;
     }
