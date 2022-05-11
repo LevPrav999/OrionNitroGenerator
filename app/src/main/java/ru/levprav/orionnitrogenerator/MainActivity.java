@@ -1,11 +1,11 @@
 package ru.levprav.orionnitrogenerator;
 
+import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-
-import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,4 +28,5 @@ public class MainActivity extends AppCompatActivity {
         ft.commit();
 
     }
+
 }

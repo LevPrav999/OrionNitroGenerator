@@ -7,8 +7,6 @@ import android.util.Log;
 
 import androidx.lifecycle.MutableLiveData;
 
-import com.google.gson.Gson;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.concurrent.ThreadLocalRandom;
@@ -16,17 +14,16 @@ import java.util.concurrent.ThreadLocalRandom;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
-import ru.levprav.orionnitrogenerator.adapters.RecyclerAdapter;
 import ru.levprav.orionnitrogenerator.retrofit.RequestsMethods;
 import ru.levprav.orionnitrogenerator.retrofit.models.CodeRequestModel;
 
 public class Generator {
-    private String letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    private final String letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
     private static RequestsMethods requestsMethods;
     private static Retrofit retrofit;
     SharedPreferences sPref;
     Activity activity;
-    private MutableLiveData<ArrayList<CodeRequestModel>> array;
+    private final MutableLiveData<ArrayList<CodeRequestModel>> array;
 
     public Generator(Activity activity, MutableLiveData<ArrayList<CodeRequestModel>> array){
         retrofit = new Retrofit.Builder()
@@ -42,10 +39,9 @@ public class Generator {
         String code = getCode();
         String token = loadToken(); // will be used to http headers
         Response response = Generator.getApi().checkCode(code).execute();
-
+        Log.d("eee", response.toString());
         ArrayList<CodeRequestModel> arr = array.getValue();
         if(response.isSuccessful()){
-
             CodeRequestModel model = new CodeRequestModel();
             model.setRequestCode(code);
             model.setMessage("VALID");

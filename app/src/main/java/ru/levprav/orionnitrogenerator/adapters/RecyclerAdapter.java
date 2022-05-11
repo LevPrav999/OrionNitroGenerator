@@ -2,12 +2,9 @@ package ru.levprav.orionnitrogenerator.adapters;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -22,7 +19,7 @@ import ru.levprav.orionnitrogenerator.retrofit.models.CodeRequestModel;
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewRow> {
 
     public MutableLiveData<ArrayList<CodeRequestModel>> array;
-    private LayoutInflater inflater;
+    private final LayoutInflater inflater;
 
     public RecyclerAdapter(Context context, MutableLiveData<ArrayList<CodeRequestModel>> array){
         this.array = array;
